@@ -4,7 +4,7 @@ import ninja.mattburgess.pentaho.di.extensionpoints.script.BaseExtensionPointExe
 import org.pentaho.di.core.extension.ExtensionPoint;
 
 @ExtensionPoint(
-  id = "TransformationStartScript",
+  id = "TransformationStartThreadsScript",
   extensionPointId = "TransformationStartThreads",
   description = "Executes script(s) when transformation step threads are started"
 )

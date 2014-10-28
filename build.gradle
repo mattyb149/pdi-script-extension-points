@@ -12,7 +12,6 @@ version = '1.0'
 // put your plugin in the Marketplace against the current revision (say, 5.0.x), use the latest
 // release tag
 ext.kettle_dependency_revision = 'TRUNK-SNAPSHOT'
-ext.zookeeper_dependency_revision = '3.4.6'
 
 // This adds the Pentaho repositories and Maven Central. The official list of repos is currently
 // kept in GitHub at pentaho/subfloor/master-copies/ivysettings.xml, but if we move to Maven
@@ -50,11 +49,7 @@ dependencies {
   // Put compile-time dependencies here. This will include anything that Kettle provides that you
   // do not need to override, and usually includes kettle-core, kettle-engine, kettle-ui-swt, and metastore
   provided("pentaho-kettle:kettle-core:${project.ext.kettle_dependency_revision}")
-  provided("pentaho-kettle:kettle-engine:${project.ext.kettle_dependency_revision}")
-  provided("pentaho-kettle:kettle-ui-swt:${project.ext.kettle_dependency_revision}")
-  provided("pentaho:metastore:${project.ext.kettle_dependency_revision}")
-  provided("org.eclipse.swt:swt-linux-x86_64:4.3.2")
-  
+
   // Put runtime dependencies here using the runtime() directive. Example:
   
   // Put runtime overrides of compile-time dependencies here. Often this will include the runtime() dependencies plus
