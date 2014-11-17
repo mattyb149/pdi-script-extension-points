@@ -10,15 +10,15 @@ import java.util.List;
 /**
  * Created by mburgess on 10/27/14.
  */
-public class ExtensionPointScriptUtil {
+public class PluginScriptUtil {
 
   protected List<Script> scriptList;
 
-  public ExtensionPointScriptUtil() {
+  public PluginScriptUtil() {
     scriptList = new ArrayList<Script>();
   }
 
-  public void loadScripts( final String extensionPointId ) {
+  public void loadScripts( final String pluginId ) {
     if ( Thread.currentThread().getContextClassLoader() == null ) {
       Thread.currentThread().setContextClassLoader( this.getClass().getClassLoader() );
     }
@@ -38,7 +38,7 @@ public class ExtensionPointScriptUtil {
                 new FilenameFilter() {
                   @Override
                   public boolean accept( File dir, String name ) {
-                    return name != null && name.startsWith( extensionPointId ) && name.endsWith( "." + extension );
+                    return name != null && name.startsWith( pluginId ) && name.endsWith( "." + extension );
                   }
                 }
               );
@@ -86,8 +86,11 @@ public class ExtensionPointScriptUtil {
         ScriptEngine scriptEngine = script.getScriptEngine();
 
         Bindings currentBindings = scriptEngine.getBindings( ScriptContext.ENGINE_SCOPE );
+        if(currentBindings == null) {
+          currentBindings = new SimpleBindings();
+        }
         currentBindings.putAll( b );
-
+        script.setBindings( currentBindings );
         try {
           script.eval();
         } catch ( ScriptException se ) {
