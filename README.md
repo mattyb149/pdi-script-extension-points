@@ -1,4 +1,4 @@
-pdi-script-extension-points
+pdi-script-extension-points ![travis-ci status](https://travis-ci.org/mattyb149/pdi-script-extension-points.svg?branch=master)
 ===========================
 
 Description
