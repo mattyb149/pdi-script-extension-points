@@ -12,7 +12,7 @@ import javax.script.SimpleBindings;
  */
 public abstract class BaseExtensionPointExecutor implements ExtensionPointInterface {
 
-  protected ExtensionPointScriptUtil scriptUtil = new ExtensionPointScriptUtil();
+  protected PluginScriptUtil scriptUtil = new PluginScriptUtil();
 
   public BaseExtensionPointExecutor( String extensionPointId ) {
     scriptUtil.loadScripts( extensionPointId );
