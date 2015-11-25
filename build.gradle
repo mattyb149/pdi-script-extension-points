@@ -84,6 +84,6 @@ artifacts {
   zip plugin
 }
 
-task createGradleWrapper(type: Wrapper) {
-  gradleVersion = '2.1'
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.9'
 }
